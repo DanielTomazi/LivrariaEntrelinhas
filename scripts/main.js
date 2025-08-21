@@ -283,10 +283,8 @@ const NavigationModule = {
         
         const handleScroll = utils.debounce(() => {
             if (header) {
-                const isScrolled = window.scrollY > 50;
-                header.style.backgroundColor = isScrolled 
-                    ? 'rgba(255, 255, 255, 0.98)' 
-                    : 'rgba(255, 255, 255, 0.95)';
+                // Header mantém sempre o fundo branco
+                header.style.backgroundColor = 'rgba(255, 255, 255, 0.98)';
             }
         }, 10);
 
