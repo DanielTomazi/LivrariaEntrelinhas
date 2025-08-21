@@ -1,12 +1,3 @@
-/**
- * Livraria Entrelinhas - Main JavaScript File
- * Following Clean Code Principles
- */
-
-// ==========================================================================
-// Constants and Configuration
-// ==========================================================================
-
 const CONFIG = {
     ANIMATION_DURATION: 300,
     SCROLL_OFFSET: 80,
@@ -29,10 +20,6 @@ const SELECTORS = {
     CONTACT_FORM: '#contact-form',
     HEADER: '.header'
 };
-
-// ==========================================================================
-// Book Data - Following Single Responsibility Principle
-// ==========================================================================
 
 const bookDatabase = [
     {

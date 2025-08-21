@@ -1,40 +1,30 @@
-/* ==========================================================================
-   Advanced Modern Animations and Transitions
-   ========================================================================== */
-
-/* Smooth Gradient Animation */
 @keyframes gradientShift {
     0% { background-position: 0% 50%; }
     50% { background-position: 100% 50%; }
     100% { background-position: 0% 50%; }
 }
 
-/* Gentle Floating Animation */
 @keyframes gentleFloat {
     0%, 100% { transform: translateY(0px) rotate(0deg); }
     33% { transform: translateY(-8px) rotate(1deg); }
     66% { transform: translateY(-4px) rotate(-1deg); }
 }
 
-/* Soft Glow Effect */
 @keyframes softGlow {
     0%, 100% { box-shadow: 0 0 20px rgba(38, 208, 206, 0.2); }
     50% { box-shadow: 0 0 35px rgba(38, 208, 206, 0.4); }
 }
 
-/* Smooth Scale Animation */
 @keyframes smoothScale {
     0%, 100% { transform: scale(1); }
     50% { transform: scale(1.05); }
 }
 
-/* Particle Effect */
 @keyframes particles {
     0% { transform: translateY(0) rotate(0deg); opacity: 1; }
     100% { transform: translateY(-100px) rotate(360deg); opacity: 0; }
 }
 
-/* Loading Animation */
 @keyframes pulse {
     0%, 100% {
         opacity: 1;
@@ -261,7 +251,6 @@
     background-color: var(--secondary-dark);
 }
 
-/* Button Ripple Effect */
 .btn {
     position: relative;
     overflow: hidden;
