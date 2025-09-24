@@ -5,278 +5,579 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Livraria Entrelinhas - Sua jornada literária começa aqui</title>
     <meta name="description" content="Descubra livros incríveis na Livraria Entrelinhas. Catálogo diversificado com os melhores títulos de ficção, tecnologia e desenvolvimento pessoal.">
-    <link rel="stylesheet" href="styles/main.css">
-    <link rel="stylesheet" href="styles/animations.css">
+    <meta name="author" content="Livraria Entrelinhas">
+    <meta name="keywords" content="livros, livraria, literatura, ficção, tecnologia, desenvolvimento pessoal, ciência">
+    <meta property="og:title" content="Livraria Entrelinhas - Sua jornada literária começa aqui">
+    <meta property="og:description" content="Descubra mundos incríveis através da leitura. Catálogo cuidadosamente selecionado.">
+    <meta property="og:type" content="website">
+    <meta name="twitter:card" content="summary_large_image">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;800&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" href="styles/components.css">
+    <link rel="stylesheet" href="styles/animations.css">
+    <link rel="icon" type="image/png" href="logoEntrelinhas.png">
 </head>
 <body>
-    <!-- Header -->
-    <header class="header">
-        <nav class="nav">
+    <div class="page-loader" id="page-loader">
+        <div class="loader-content">
+            <div class="loader-spinner"></div>
+            <p class="loader-text">Carregando sua experiência literária...</p>
+        </div>
+    </div>
+
+    <header class="header" role="banner">
+        <nav class="nav" role="navigation" aria-label="Navegação principal">
             <div class="nav__container">
                 <div class="nav__brand">
                     <img src="logoEntrelinhas.png" alt="Logo Livraria Entrelinhas" class="nav__logo">
-                    <span class="nav__title">Entrelinhas</span>
+                    <h1 class="nav__title">Entrelinhas</h1>
                 </div>
-                <ul class="nav__menu" id="nav-menu">
-                    <li class="nav__item">
-                        <a href="#home" class="nav__link nav__link--active">Início</a>
+                <ul class="nav__menu" id="nav-menu" role="menubar">
+                    <li class="nav__item" role="none">
+                        <a href="#home" class="nav__link nav__link--active" role="menuitem" aria-current="page">Início</a>
                     </li>
-                    <li class="nav__item">
-                        <a href="#catalog" class="nav__link">Catálogo</a>
+                    <li class="nav__item" role="none">
+                        <a href="#catalog" class="nav__link" role="menuitem">Catálogo</a>
                     </li>
-                    <li class="nav__item">
-                        <a href="#about" class="nav__link">Sobre</a>
+                    <li class="nav__item" role="none">
+                        <a href="#about" class="nav__link" role="menuitem">Sobre</a>
                     </li>
-                    <li class="nav__item">
-                        <a href="#contact" class="nav__link">Contato</a>
+                    <li class="nav__item" role="none">
+                        <a href="#contact" class="nav__link" role="menuitem">Contato</a>
                     </li>
                 </ul>
-                <div class="nav__toggle" id="nav-toggle">
-                    <i class="fas fa-bars"></i>
-                </div>
+                <button class="nav__toggle" id="nav-toggle" aria-label="Abrir menu de navegação" aria-expanded="false">
+                    <span class="nav__toggle-line"></span>
+                    <span class="nav__toggle-line"></span>
+                    <span class="nav__toggle-line"></span>
+                </button>
             </div>
         </nav>
     </header>
 
-    <!-- Main Content -->
-    <main class="main">
-        <!-- Hero Section -->
-        <section id="home" class="hero">
+    <main class="main" role="main">
+        <section id="home" class="hero" role="banner">
+            <div class="hero__background">
+                <div class="hero__particles"></div>
+                <div class="hero__overlay"></div>
+            </div>
             <div class="hero__container">
-                <div class="hero__content">
-                    <h1 class="hero__title">
-                        Bem-vindo à <span class="hero__highlight">Entrelinhas</span>
-                    </h1>
+                <article class="hero__content">
+                    <div class="hero__badge">
+                        <span class="badge__text">Bem-vindo à nossa comunidade literária</span>
+                    </div>
+                    <h2 class="hero__title">
+                        Descubra mundos extraordinários através da 
+                        <span class="hero__highlight">leitura</span>
+                    </h2>
                     <p class="hero__description">
-                        Descubra mundos incríveis através da leitura. Nossa livraria oferece uma seleção cuidadosa de livros que transformam vidas e expandem horizontes.
+                        Uma experiência literária única que conecta você aos melhores títulos 
+                        cuidadosamente selecionados por especialistas apaixonados por livros.
                     </p>
                     <div class="hero__buttons">
-                        <a href="#catalog" class="btn btn--primary">
-                            <i class="fas fa-book-open"></i>
-                            Explorar Catálogo
+                        <a href="#catalog" class="btn btn--primary btn--hero" aria-describedby="catalog-description">
+                            <span class="btn__content">
+                                <i class="fas fa-book-open" aria-hidden="true"></i>
+                                <span>Explorar Catálogo</span>
+                            </span>
+                            <span class="btn__shine"></span>
                         </a>
-                        <a href="#about" class="btn btn--secondary">
-                            <i class="fas fa-info-circle"></i>
-                            Saiba Mais
+                        <a href="#about" class="btn btn--secondary btn--hero" aria-describedby="about-description">
+                            <span class="btn__content">
+                                <i class="fas fa-info-circle" aria-hidden="true"></i>
+                                <span>Nossa História</span>
+                            </span>
                         </a>
                     </div>
-                </div>
-                <div class="hero__image">
-                    <div class="hero__logo-showcase">
-                        <div class="hero__logo">
-                            <img src="logoEntrelinhas.png" alt="Logo Livraria Entrelinhas" class="hero__logo-img">
+                    <div class="hero__stats">
+                        <div class="stat-item">
+                            <span class="stat-number">1000+</span>
+                            <span class="stat-label">Títulos Únicos</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-number">500+</span>
+                            <span class="stat-label">Leitores Satisfeitos</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-number">50+</span>
+                            <span class="stat-label">Categorias</span>
                         </div>
                     </div>
+                </article>
+                <aside class="hero__visual">
+                    <div class="hero__showcase">
+                        <div class="showcase__main">
+                            <div class="showcase__logo">
+                                <img src="logoEntrelinhas.png" alt="Ícone representativo da Livraria Entrelinhas" class="showcase__image">
+                                <div class="showcase__glow"></div>
+                            </div>
+                        </div>
+                        <div class="showcase__floating-elements">
+                            <div class="floating-book floating-book--1"></div>
+                            <div class="floating-book floating-book--2"></div>
+                            <div class="floating-book floating-book--3"></div>
+                        </div>
+                    </div>
+                </aside>
+            </div>
+            <div class="hero__scroll-indicator">
+                <div class="scroll-indicator__arrow">
+                    <i class="fas fa-chevron-down" aria-hidden="true"></i>
                 </div>
+                <span class="scroll-indicator__text">Explore mais</span>
             </div>
         </section>
 
-        <!-- Catalog Section -->
-        <section id="catalog" class="catalog">
+        <section id="catalog" class="catalog" role="region" aria-labelledby="catalog-title">
             <div class="catalog__container">
-                <div class="section-header">
-                    <h2 class="section-title">Nosso Catálogo</h2>
-                    <p class="section-description">
-                        Uma coleção cuidadosamente selecionada de livros para todos os gostos e interesses
-                    </p>
+                <header class="section-header">
+                    <div class="section-header__content">
+                        <span class="section-badge">📚 Nossos Livros</span>
+                        <h2 id="catalog-title" class="section-title">
+                            Catálogo Exclusivo
+                        </h2>
+                        <p class="section-description">
+                            Cada livro foi cuidadosamente selecionado para oferecer conhecimento, 
+                            entretenimento e transformação pessoal
+                        </p>
+                    </div>
+                </header>
+
+                <div class="catalog__filters" role="tablist" aria-label="Filtrar livros por categoria">
+                    <button class="filter-btn filter-btn--active" data-filter="all" role="tab" aria-selected="true" aria-controls="books-grid">
+                        <span class="filter-btn__icon">🌟</span>
+                        <span class="filter-btn__text">Todos os Livros</span>
+                    </button>
+                    <button class="filter-btn" data-filter="tecnologia" role="tab" aria-selected="false" aria-controls="books-grid">
+                        <span class="filter-btn__icon">💻</span>
+                        <span class="filter-btn__text">Tecnologia</span>
+                    </button>
+                    <button class="filter-btn" data-filter="ficcao" role="tab" aria-selected="false" aria-controls="books-grid">
+                        <span class="filter-btn__icon">📖</span>
+                        <span class="filter-btn__text">Ficção</span>
+                    </button>
+                    <button class="filter-btn" data-filter="desenvolvimento" role="tab" aria-selected="false" aria-controls="books-grid">
+                        <span class="filter-btn__icon">🚀</span>
+                        <span class="filter-btn__text">Desenvolvimento</span>
+                    </button>
+                    <button class="filter-btn" data-filter="ciencia" role="tab" aria-selected="false" aria-controls="books-grid">
+                        <span class="filter-btn__icon">🔬</span>
+                        <span class="filter-btn__text">Ciência</span>
+                    </button>
                 </div>
 
-                <div class="catalog__filters">
-                    <button class="filter-btn filter-btn--active" data-filter="all">
-                        Todos
-                    </button>
-                    <button class="filter-btn" data-filter="tecnologia">
-                        Tecnologia
-                    </button>
-                    <button class="filter-btn" data-filter="ficcao">
-                        Ficção
-                    </button>
-                    <button class="filter-btn" data-filter="desenvolvimento">
-                        Desenvolvimento
-                    </button>
-                    <button class="filter-btn" data-filter="ciencia">
-                        Ciência
-                    </button>
+                <div class="catalog__grid" id="books-grid" role="tabpanel" aria-live="polite">
                 </div>
 
-                <div class="catalog__grid" id="books-grid">
-                    <!-- Books will be dynamically loaded here -->
+                <div class="catalog__features">
+                    <div class="feature-card">
+                        <div class="feature-card__icon">
+                            <i class="fas fa-medal" aria-hidden="true"></i>
+                        </div>
+                        <h3 class="feature-card__title">Qualidade Garantida</h3>
+                        <p class="feature-card__description">Livros selecionados por especialistas</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-card__icon">
+                            <i class="fas fa-shipping-fast" aria-hidden="true"></i>
+                        </div>
+                        <h3 class="feature-card__title">Entrega Expressa</h3>
+                        <p class="feature-card__description">Receba em até 24h em sua casa</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-card__icon">
+                            <i class="fas fa-heart" aria-hidden="true"></i>
+                        </div>
+                        <h3 class="feature-card__title">Atendimento Humano</h3>
+                        <p class="feature-card__description">Recomendações personalizadas</p>
+                    </div>
                 </div>
             </div>
         </section>
 
-        <!-- About Section -->
-        <section id="about" class="about">
+        <section id="about" class="about" role="region" aria-labelledby="about-title">
+            <div class="about__background">
+                <div class="about__pattern"></div>
+            </div>
             <div class="about__container">
+                <header class="section-header">
+                    <span class="section-badge">Nossa História</span>
+                    <h2 id="about-title" class="section-title">A Magia por Trás da Entrelinhas</h2>
+                </header>
+                
                 <div class="about__content">
-                    <h2 class="about__title">Sobre a Entrelinhas</h2>
-                    <div class="about__text-content">
-                        <p class="about__text">
-                            A Livraria Entrelinhas nasceu da paixão pela leitura e do desejo de compartilhar conhecimento. 
-                            Acreditamos que cada livro é uma porta para um novo mundo, uma nova perspectiva, uma nova possibilidade.
-                        </p>
-                        <p class="about__text">
-                            Nossa missão é conectar leitores com os livros que podem transformar suas vidas, oferecendo 
-                            uma experiência única de descoberta literária em um ambiente acolhedor e inspirador.
-                        </p>
-                        <div class="about__features">
-                            <div class="feature">
-                                <div class="feature__icon">
-                                    <i class="fas fa-book-open"></i>
+                    <article class="about__story">
+                        <div class="story__content">
+                            <h3 class="story__title">Uma Paixão Transformada em Propósito</h3>
+                            <p class="story__text story__text--lead">
+                                Nascemos do sonho de criar um espaço onde cada página vira uma descoberta, 
+                                onde cada livro é uma ponte para novos horizontes e possibilidades infinitas.
+                            </p>
+                            <p class="story__text">
+                                Nossa curadoria vai além da simples seleção: é uma arte que conecta almas 
+                                curiosas com conhecimentos transformadores, criando experiências únicas de 
+                                crescimento pessoal e intelectual.
+                            </p>
+                        </div>
+                        <div class="story__visual">
+                            <div class="visual__card">
+                                <div class="visual__icon">
+                                    <i class="fas fa-book-reader" aria-hidden="true"></i>
                                 </div>
-                                <div class="feature__content">
-                                    <h4 class="feature__title">Curadoria Especializada</h4>
-                                    <p class="feature__description">Selecionamos cuidadosamente cada título</p>
-                                </div>
+                                <span class="visual__text">Experiência Única</span>
                             </div>
-                            <div class="feature">
-                                <div class="feature__icon">
-                                    <i class="fas fa-heart"></i>
-                                </div>
-                                <div class="feature__content">
-                                    <h4 class="feature__title">Atendimento Personalizado</h4>
-                                    <p class="feature__description">Recomendações feitas especialmente para você</p>
-                                </div>
+                        </div>
+                    </article>
+
+                    <div class="about__pillars">
+                        <div class="pillar">
+                            <div class="pillar__icon">
+                                <i class="fas fa-gem" aria-hidden="true"></i>
                             </div>
-                            <div class="feature">
-                                <div class="feature__icon">
-                                    <i class="fas fa-shipping-fast"></i>
-                                </div>
-                                <div class="feature__content">
-                                    <h4 class="feature__title">Entrega Rápida</h4>
-                                    <p class="feature__description">Seus livros chegam rapidamente e com segurança</p>
-                                </div>
+                            <h4 class="pillar__title">Curadoria Premium</h4>
+                            <p class="pillar__description">Cada título é escolhido por especialistas apaixonados por literatura</p>
+                        </div>
+                        <div class="pillar">
+                            <div class="pillar__icon">
+                                <i class="fas fa-user-friends" aria-hidden="true"></i>
                             </div>
+                            <h4 class="pillar__title">Comunidade Literária</h4>
+                            <p class="pillar__description">Conectamos leitores através de experiências compartilhadas</p>
+                        </div>
+                        <div class="pillar">
+                            <div class="pillar__icon">
+                                <i class="fas fa-rocket" aria-hidden="true"></i>
+                            </div>
+                            <h4 class="pillar__title">Inovação Constante</h4>
+                            <p class="pillar__description">Sempre buscando novas formas de encantar nossos leitores</p>
                         </div>
                     </div>
-                    <div class="about__stats">
-                        <div class="stat">
-                            <div class="stat__number">1000+</div>
-                            <div class="stat__label">Livros</div>
+
+                    <div class="about__achievements">
+                        <div class="achievement">
+                            <div class="achievement__number" data-target="1000">0</div>
+                            <div class="achievement__label">Títulos Exclusivos</div>
+                            <div class="achievement__description">Cuidadosamente selecionados</div>
                         </div>
-                        <div class="stat">
-                            <div class="stat__number">500+</div>
-                            <div class="stat__label">Clientes Felizes</div>
+                        <div class="achievement">
+                            <div class="achievement__number" data-target="500">0</div>
+                            <div class="achievement__label">Leitores Apaixonados</div>
+                            <div class="achievement__description">Transformados pelos livros</div>
                         </div>
-                        <div class="stat">
-                            <div class="stat__number">50+</div>
-                            <div class="stat__label">Categorias</div>
+                        <div class="achievement">
+                            <div class="achievement__number" data-target="50">0</div>
+                            <div class="achievement__label">Categorias Diversas</div>
+                            <div class="achievement__description">Para todos os gostos</div>
+                        </div>
+                        <div class="achievement">
+                            <div class="achievement__number" data-target="5">0</div>
+                            <div class="achievement__label">Anos de Paixão</div>
+                            <div class="achievement__description">Dedicados à literatura</div>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- Contact Section -->
-        <section id="contact" class="contact">
+        <section id="contact" class="contact" role="region" aria-labelledby="contact-title">
+            <div class="contact__background">
+                <div class="contact__gradient"></div>
+            </div>
             <div class="contact__container">
-                <div class="section-header">
-                    <h2 class="section-title">Entre em Contato</h2>
+                <header class="section-header">
+                    <span class="section-badge">📞 Fale Conosco</span>
+                    <h2 id="contact-title" class="section-title">Vamos Conversar Sobre Livros?</h2>
                     <p class="section-description">
-                        Estamos aqui para ajudar você a encontrar o livro perfeito
+                        Nossa equipe está pronta para ajudar você a encontrar sua próxima grande descoberta literária
                     </p>
-                </div>
+                </header>
 
                 <div class="contact__content">
-                    <div class="contact__info">
-                        <h3 class="contact__subtitle">Informações de Contato</h3>
-                        <div class="contact__item">
-                            <i class="fas fa-map-marker-alt"></i>
-                            <div>
-                                <strong>Endereço</strong>
-                                <p>Rua dos Livros, 123 - Centro<br>São Paulo, SP - 01234-567</p>
+                    <aside class="contact__info">
+                        <div class="info__header">
+                            <h3 class="info__title">Conecte-se Conosco</h3>
+                            <p class="info__subtitle">Múltiplas formas de nos encontrar</p>
+                        </div>
+                        
+                        <div class="contact__methods">
+                            <div class="method" itemscope itemtype="https://schema.org/PostalAddress">
+                                <div class="method__icon">
+                                    <i class="fas fa-map-marker-alt" aria-hidden="true"></i>
+                                </div>
+                                <div class="method__content">
+                                    <h4 class="method__title">Nosso Endereço</h4>
+                                    <address class="method__text" itemprop="streetAddress">
+                                        Rua dos Livros, 123 - Centro<br>
+                                        <span itemprop="addressLocality">São Paulo</span>, 
+                                        <span itemprop="addressRegion">SP</span> - 
+                                        <span itemprop="postalCode">01234-567</span>
+                                    </address>
+                                </div>
+                            </div>
+                            
+                            <div class="method">
+                                <div class="method__icon">
+                                    <i class="fas fa-phone-alt" aria-hidden="true"></i>
+                                </div>
+                                <div class="method__content">
+                                    <h4 class="method__title">Telefone</h4>
+                                    <a href="tel:+5511123456789" class="method__text method__text--link">
+                                        (11) 1234-5678
+                                    </a>
+                                    <small class="method__note">WhatsApp disponível</small>
+                                </div>
+                            </div>
+                            
+                            <div class="method">
+                                <div class="method__icon">
+                                    <i class="fas fa-envelope-open" aria-hidden="true"></i>
+                                </div>
+                                <div class="method__content">
+                                    <h4 class="method__title">E-mail</h4>
+                                    <a href="mailto:contato@entrelinhas.com.br" class="method__text method__text--link">
+                                        contato@entrelinhas.com.br
+                                    </a>
+                                    <small class="method__note">Resposta em até 2h</small>
+                                </div>
+                            </div>
+                            
+                            <div class="method">
+                                <div class="method__icon">
+                                    <i class="fas fa-clock" aria-hidden="true"></i>
+                                </div>
+                                <div class="method__content">
+                                    <h4 class="method__title">Horário de Atendimento</h4>
+                                    <div class="method__text">
+                                        <time>Segunda a Sexta: 9h às 19h</time><br>
+                                        <time>Sábado: 9h às 17h</time>
+                                    </div>
+                                </div>
                             </div>
                         </div>
-                        <div class="contact__item">
-                            <i class="fas fa-phone"></i>
-                            <div>
-                                <strong>Telefone</strong>
-                                <p>(11) 1234-5678</p>
-                            </div>
-                        </div>
-                        <div class="contact__item">
-                            <i class="fas fa-envelope"></i>
-                            <div>
-                                <strong>E-mail</strong>
-                                <p>contato@entrelinhas.com.br</p>
-                            </div>
-                        </div>
-                        <div class="contact__item">
-                            <i class="fas fa-clock"></i>
-                            <div>
-                                <strong>Horário de Funcionamento</strong>
-                                <p>Segunda a Sexta: 9h às 19h<br>Sábado: 9h às 17h</p>
-                            </div>
-                        </div>
-                    </div>
+                    </aside>
 
-                    <form class="contact__form" id="contact-form">
-                        <div class="form__group">
-                            <label for="name" class="form__label">Nome</label>
-                            <input type="text" id="name" name="name" class="form__input" required>
+                    <form class="contact__form" id="contact-form" novalidate>
+                        <div class="form__header">
+                            <h3 class="form__title">Envie Sua Mensagem</h3>
+                            <p class="form__subtitle">Adoramos ouvir nossos leitores</p>
                         </div>
-                        <div class="form__group">
-                            <label for="email" class="form__label">E-mail</label>
-                            <input type="email" id="email" name="email" class="form__input" required>
+                        
+                        <div class="form__grid">
+                            <div class="form__group form__group--half">
+                                <label for="name" class="form__label">
+                                    <span class="label__text">Nome Completo</span>
+                                    <span class="label__required" aria-label="obrigatório">*</span>
+                                </label>
+                                <div class="input__wrapper">
+                                    <input 
+                                        type="text" 
+                                        id="name" 
+                                        name="name" 
+                                        class="form__input" 
+                                        placeholder="Como podemos te chamar?" 
+                                        required 
+                                        aria-describedby="name-error"
+                                    >
+                                    <span class="input__icon">
+                                        <i class="fas fa-user" aria-hidden="true"></i>
+                                    </span>
+                                </div>
+                                <span id="name-error" class="form__error"></span>
+                            </div>
+                            
+                            <div class="form__group form__group--half">
+                                <label for="email" class="form__label">
+                                    <span class="label__text">E-mail</span>
+                                    <span class="label__required" aria-label="obrigatório">*</span>
+                                </label>
+                                <div class="input__wrapper">
+                                    <input 
+                                        type="email" 
+                                        id="email" 
+                                        name="email" 
+                                        class="form__input" 
+                                        placeholder="seu@email.com" 
+                                        required 
+                                        aria-describedby="email-error"
+                                    >
+                                    <span class="input__icon">
+                                        <i class="fas fa-envelope" aria-hidden="true"></i>
+                                    </span>
+                                </div>
+                                <span id="email-error" class="form__error"></span>
+                            </div>
                         </div>
+                        
                         <div class="form__group">
-                            <label for="subject" class="form__label">Assunto</label>
-                            <input type="text" id="subject" name="subject" class="form__input" required>
+                            <label for="subject" class="form__label">
+                                <span class="label__text">Assunto</span>
+                                <span class="label__required" aria-label="obrigatório">*</span>
+                            </label>
+                            <div class="input__wrapper">
+                                <select id="subject" name="subject" class="form__input form__select" required aria-describedby="subject-error">
+                                    <option value="" disabled selected>Sobre o que você gostaria de falar?</option>
+                                    <option value="recomendacao">Busco recomendação de livro</option>
+                                    <option value="duvida">Dúvida sobre produto</option>
+                                    <option value="sugestao">Sugestão para catálogo</option>
+                                    <option value="elogio">Elogio</option>
+                                    <option value="reclamacao">Reclamação</option>
+                                    <option value="parceria">Parceria</option>
+                                    <option value="outro">Outro assunto</option>
+                                </select>
+                                <span class="input__icon">
+                                    <i class="fas fa-tag" aria-hidden="true"></i>
+                                </span>
+                            </div>
+                            <span id="subject-error" class="form__error"></span>
                         </div>
+                        
                         <div class="form__group">
-                            <label for="message" class="form__label">Mensagem</label>
-                            <textarea id="message" name="message" rows="5" class="form__textarea" required></textarea>
+                            <label for="message" class="form__label">
+                                <span class="label__text">Mensagem</span>
+                                <span class="label__required" aria-label="obrigatório">*</span>
+                            </label>
+                            <div class="input__wrapper">
+                                <textarea 
+                                    id="message" 
+                                    name="message" 
+                                    rows="5" 
+                                    class="form__textarea" 
+                                    placeholder="Conte-nos mais detalhes sobre sua solicitação..." 
+                                    required 
+                                    aria-describedby="message-error"
+                                ></textarea>
+                                <span class="textarea__counter">
+                                    <span id="message-count">0</span>/500 caracteres
+                                </span>
+                            </div>
+                            <span id="message-error" class="form__error"></span>
                         </div>
-                        <button type="submit" class="btn btn--primary btn--full">
-                            <i class="fas fa-paper-plane"></i>
-                            Enviar Mensagem
-                        </button>
+                        
+                        <div class="form__actions">
+                            <button type="submit" class="btn btn--primary btn--form">
+                                <span class="btn__content">
+                                    <i class="fas fa-paper-plane" aria-hidden="true"></i>
+                                    <span>Enviar Mensagem</span>
+                                </span>
+                                <span class="btn__shine"></span>
+                            </button>
+                            <p class="form__note">
+                                <i class="fas fa-shield-alt" aria-hidden="true"></i>
+                                Seus dados estão seguros conosco
+                            </p>
+                        </div>
                     </form>
                 </div>
             </div>
         </section>
     </main>
 
-    <!-- Footer -->
-    <footer class="footer">
+    <footer class="footer" role="contentinfo">
+        <div class="footer__background">
+            <div class="footer__pattern"></div>
+        </div>
         <div class="footer__container">
             <div class="footer__content">
                 <div class="footer__brand">
-                    <img src="logoEntrelinhas.png" alt="Logo Entrelinhas" class="footer__logo">
-                    <p class="footer__description">
-                        Sua jornada literária começa aqui. Descubra, explore e transforme sua vida através da leitura.
+                    <div class="brand__logo">
+                        <img src="logoEntrelinhas.png" alt="Logo Entrelinhas" class="footer__logo">
+                        <h3 class="brand__name">Entrelinhas</h3>
+                    </div>
+                    <p class="brand__tagline">
+                        Transformando vidas através da literatura, uma página por vez.
+                    </p>
+                    <p class="brand__description">
+                        Conectamos leitores apaixonados com livros extraordinários, 
+                        criando uma comunidade onde cada história importa.
                     </p>
                 </div>
+                
                 <div class="footer__links">
-                    <h4 class="footer__title">Links Rápidos</h4>
+                    <h4 class="footer__title">Navegação</h4>
+                    <nav class="footer__nav" aria-label="Links do rodapé">
+                        <ul class="footer__list">
+                            <li><a href="#home" class="footer__link">Início</a></li>
+                            <li><a href="#catalog" class="footer__link">Catálogo</a></li>
+                            <li><a href="#about" class="footer__link">Nossa História</a></li>
+                            <li><a href="#contact" class="footer__link">Contato</a></li>
+                        </ul>
+                    </nav>
+                </div>
+                
+                <div class="footer__services">
+                    <h4 class="footer__title">Serviços</h4>
                     <ul class="footer__list">
-                        <li><a href="#home" class="footer__link">Início</a></li>
-                        <li><a href="#catalog" class="footer__link">Catálogo</a></li>
-                        <li><a href="#about" class="footer__link">Sobre</a></li>
-                        <li><a href="#contact" class="footer__link">Contato</a></li>
+                        <li><a href="#" class="footer__link">Recomendações Personalizadas</a></li>
+                        <li><a href="#" class="footer__link">Clube do Livro</a></li>
+                        <li><a href="#" class="footer__link">Eventos Literários</a></li>
+                        <li><a href="#" class="footer__link">Newsletter</a></li>
                     </ul>
                 </div>
-                <div class="footer__social">
-                    <h4 class="footer__title">Redes Sociais</h4>
+                
+                <div class="footer__connect">
+                    <h4 class="footer__title">Conecte-se</h4>
                     <div class="social__links">
-                        <a href="#" class="social__link"><i class="fab fa-facebook-f"></i></a>
-                        <a href="#" class="social__link"><i class="fab fa-instagram"></i></a>
-                        <a href="#" class="social__link"><i class="fab fa-twitter"></i></a>
-                        <a href="#" class="social__link"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#" class="social__link" aria-label="Facebook" title="Siga-nos no Facebook">
+                            <i class="fab fa-facebook-f" aria-hidden="true"></i>
+                        </a>
+                        <a href="#" class="social__link" aria-label="Instagram" title="Siga-nos no Instagram">
+                            <i class="fab fa-instagram" aria-hidden="true"></i>
+                        </a>
+                        <a href="#" class="social__link" aria-label="Twitter" title="Siga-nos no Twitter">
+                            <i class="fab fa-twitter" aria-hidden="true"></i>
+                        </a>
+                        <a href="#" class="social__link" aria-label="LinkedIn" title="Conecte-se no LinkedIn">
+                            <i class="fab fa-linkedin-in" aria-hidden="true"></i>
+                        </a>
+                        <a href="#" class="social__link" aria-label="YouTube" title="Inscreva-se no YouTube">
+                            <i class="fab fa-youtube" aria-hidden="true"></i>
+                        </a>
+                    </div>
+                    
+                    <div class="newsletter">
+                        <h5 class="newsletter__title">Newsletter</h5>
+                        <p class="newsletter__description">Receba nossas recomendações semanais</p>
+                        <form class="newsletter__form" aria-label="Inscrição na newsletter">
+                            <div class="newsletter__input-group">
+                                <input 
+                                    type="email" 
+                                    class="newsletter__input" 
+                                    placeholder="seu@email.com"
+                                    aria-label="Seu endereço de e-mail"
+                                    required
+                                >
+                                <button type="submit" class="newsletter__button" aria-label="Inscrever-se">
+                                    <i class="fas fa-arrow-right" aria-hidden="true"></i>
+                                </button>
+                            </div>
+                        </form>
                     </div>
                 </div>
             </div>
+            
             <div class="footer__bottom">
-                <p>&copy; 2025 Livraria Entrelinhas. Todos os direitos reservados.</p>
+                <div class="bottom__content">
+                    <p class="copyright">
+                        &copy; 2025 Livraria Entrelinhas. Todos os direitos reservados.
+                    </p>
+                    <div class="footer__legal">
+                        <a href="#" class="legal__link">Política de Privacidade</a>
+                        <a href="#" class="legal__link">Termos de Uso</a>
+                        <a href="#" class="legal__link">Política de Cookies</a>
+                    </div>
+                </div>
             </div>
         </div>
     </footer>
 
-    <!-- Scripts -->
-    <script src="scripts/main.js"></script>
+    <button class="scroll-to-top" id="scroll-to-top" aria-label="Voltar ao topo">
+        <i class="fas fa-chevron-up" aria-hidden="true"></i>
+    </button>
+
+    <script src="scripts/main.js" defer></script>
 </body>
 </html>

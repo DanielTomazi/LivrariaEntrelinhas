@@ -1,0 +1,443 @@
+/* ==========================================================================
+   Advanced Modern Animations and Transitions
+   ========================================================================== */
+
+/* Smooth Gradient Animation */
+@keyframes gradientShift {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+/* Gentle Floating Animation */
+@keyframes gentleFloat {
+    0%, 100% { transform: translateY(0px) rotate(0deg); }
+    33% { transform: translateY(-8px) rotate(1deg); }
+    66% { transform: translateY(-4px) rotate(-1deg); }
+}
+
+/* Soft Glow Effect */
+@keyframes softGlow {
+    0%, 100% { box-shadow: 0 0 20px rgba(38, 208, 206, 0.2); }
+    50% { box-shadow: 0 0 35px rgba(38, 208, 206, 0.4); }
+}
+
+/* Smooth Scale Animation */
+@keyframes smoothScale {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+}
+
+/* Particle Effect */
+@keyframes particles {
+    0% { transform: translateY(0) rotate(0deg); opacity: 1; }
+    100% { transform: translateY(-100px) rotate(360deg); opacity: 0; }
+}
+
+/* Loading Animation */
+@keyframes pulse {
+    0%, 100% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0.5;
+    }
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes slideInLeft {
+    from {
+        transform: translateX(-100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+@keyframes slideInUp {
+    from {
+        transform: translateY(100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+@keyframes slideInDown {
+    from {
+        transform: translateY(-100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+@keyframes scaleIn {
+    from {
+        transform: scale(0);
+        opacity: 0;
+    }
+    to {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+@keyframes bounce {
+    0%, 20%, 53%, 80%, 100% {
+        animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+        transform: translate3d(0, 0, 0);
+    }
+    40%, 43% {
+        animation-timing-function: cubic-bezier(0.755, 0.05, 0.855, 0.06);
+        transform: translate3d(0, -30px, 0) scaleY(1.1);
+    }
+    70% {
+        animation-timing-function: cubic-bezier(0.755, 0.05, 0.855, 0.06);
+        transform: translate3d(0, -15px, 0) scaleY(1.05);
+    }
+    90% {
+        transform: translate3d(0, -4px, 0) scaleY(0.95);
+    }
+}
+
+@keyframes shake {
+    10%, 90% {
+        transform: translate3d(-1px, 0, 0);
+    }
+    20%, 80% {
+        transform: translate3d(2px, 0, 0);
+    }
+    30%, 50%, 70% {
+        transform: translate3d(-4px, 0, 0);
+    }
+    40%, 60% {
+        transform: translate3d(4px, 0, 0);
+    }
+}
+
+/* ==========================================================================
+   Utility Animation Classes
+   ========================================================================== */
+
+.animate-gentle-float {
+    animation: gentleFloat 6s ease-in-out infinite;
+}
+
+.animate-soft-glow {
+    animation: softGlow 4s ease-in-out infinite;
+}
+
+.animate-smooth-scale {
+    animation: smoothScale 8s ease-in-out infinite;
+}
+
+.hover-lift {
+    transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.hover-lift:hover {
+    transform: translateY(-12px);
+}
+
+.slide-in-left {
+    animation: slideInLeft 0.6s ease-out forwards;
+}
+
+.slide-in-up {
+    animation: slideInUp 0.6s ease-out forwards;
+}
+
+.slide-in-down {
+    animation: slideInDown 0.6s ease-out forwards;
+}
+
+.scale-in {
+    animation: scaleIn 0.3s ease-out forwards;
+}
+
+/* ==========================================================================
+   Hover Effects
+   ========================================================================== */
+
+.hover-grow {
+    transition: transform 0.3s ease;
+}
+
+.hover-grow:hover {
+    transform: scale(1.05);
+}
+
+.hover-shrink {
+    transition: transform 0.3s ease;
+}
+
+.hover-shrink:hover {
+    transform: scale(0.95);
+}
+
+.hover-rotate {
+    transition: transform 0.3s ease;
+}
+
+.hover-rotate:hover {
+    transform: rotate(5deg);
+}
+
+.hover-float {
+    transition: transform 0.3s ease;
+}
+
+.hover-float:hover {
+    transform: translateY(-10px);
+}
+
+/* ==========================================================================
+   Loading States
+   ========================================================================== */
+
+.loading-skeleton {
+    background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
+    background-size: 200% 100%;
+    animation: loading 1.5s infinite;
+}
+
+@keyframes loading {
+    0% {
+        background-position: 200% 0;
+    }
+    100% {
+        background-position: -200% 0;
+    }
+}
+
+.spinner {
+    width: 20px;
+    height: 20px;
+    border: 2px solid #f3f3f3;
+    border-top: 2px solid var(--secondary-color);
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+    display: inline-block;
+}
+
+/* ==========================================================================
+   Micro-interactions
+   ========================================================================== */
+
+.book-card {
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.book-card:hover {
+    transform: translateY(-8px) scale(1.02);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+}
+
+.book-card:hover .book-card__img {
+    transform: scale(1.1);
+}
+
+.book-card__category {
+    transition: all 0.3s ease;
+}
+
+.book-card:hover .book-card__category {
+    transform: scale(1.1);
+    background-color: var(--secondary-dark);
+}
+
+/* Button Ripple Effect */
+.btn {
+    position: relative;
+    overflow: hidden;
+}
+
+.btn::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.3);
+    transition: width 0.6s, height 0.6s;
+    transform: translate(-50%, -50%);
+    z-index: 0;
+}
+
+.btn:active::after {
+    width: 300px;
+    height: 300px;
+}
+
+.btn > * {
+    position: relative;
+    z-index: 1;
+}
+
+/* ==========================================================================
+   Scroll Animations
+   ========================================================================== */
+
+.scroll-fade-in {
+    opacity: 0;
+    transform: translateY(50px);
+    transition: all 0.8s ease-out;
+}
+
+.scroll-fade-in.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.scroll-slide-left {
+    opacity: 0;
+    transform: translateX(-50px);
+    transition: all 0.8s ease-out;
+}
+
+.scroll-slide-left.visible {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.scroll-slide-right {
+    opacity: 0;
+    transform: translateX(50px);
+    transition: all 0.8s ease-out;
+}
+
+.scroll-slide-right.visible {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.scroll-scale-in {
+    opacity: 0;
+    transform: scale(0.8);
+    transition: all 0.8s ease-out;
+}
+
+.scroll-scale-in.visible {
+    opacity: 1;
+    transform: scale(1);
+}
+
+/* ==========================================================================
+   Focus States for Accessibility
+   ========================================================================== */
+
+.btn:focus,
+.form__input:focus,
+.form__textarea:focus,
+.nav__link:focus,
+.filter-btn:focus {
+    outline: 2px solid var(--secondary-color);
+    outline-offset: 2px;
+}
+
+/* ==========================================================================
+   Dark Mode Support (Future Enhancement)
+   ========================================================================== */
+
+@media (prefers-color-scheme: dark) {
+    :root {
+        --text-primary: #ffffff;
+        --text-secondary: #b0bec5;
+        --text-light: #78909c;
+        --background-light: #121212;
+        --background-gray: #1e1e1e;
+        --background-dark: #000000;
+        --border-color: #333333;
+        --shadow-light: rgba(0, 0, 0, 0.3);
+        --shadow-medium: rgba(0, 0, 0, 0.4);
+        --shadow-heavy: rgba(0, 0, 0, 0.6);
+    }
+
+    .header {
+        background-color: rgba(255, 255, 255, 0.98);
+    }
+
+    .book-card,
+    .contact__form {
+        background-color: #1e1e1e;
+        border: 1px solid #333333;
+    }
+
+    .loading-skeleton {
+        background: linear-gradient(90deg, #333333 25%, #404040 50%, #333333 75%);
+        background-size: 200% 100%;
+    }
+}
+
+/* ==========================================================================
+   Reduced Motion Support
+   ========================================================================== */
+
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+
+    .hero__book {
+        transform: none !important;
+    }
+
+    .book-card:hover {
+        transform: none !important;
+    }
+
+    .animate-pulse,
+    .animate-spin,
+    .animate-bounce {
+        animation: none !important;
+    }
+}
+
+/* ==========================================================================
+   High Contrast Mode Support
+   ========================================================================== */
+
+@media (prefers-contrast: high) {
+    :root {
+        --primary-color: #000000;
+        --secondary-color: #ff6600;
+        --text-primary: #000000;
+        --text-secondary: #333333;
+        --background-light: #ffffff;
+        --border-color: #000000;
+    }
+
+    .btn--primary {
+        border: 2px solid #000000;
+    }
+
+    .book-card {
+        border: 2px solid #000000;
+    }
+
+    .form__input,
+    .form__textarea {
+        border: 2px solid #000000;
+    }
+}
