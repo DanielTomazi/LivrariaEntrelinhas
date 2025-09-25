@@ -14,6 +14,7 @@ Documentação:
 - [Fernando Gonçalves Andrade Bilha](https//github.com/liinqy);
 - [Paulo Henrique Silva Guimarães](https://github.com/PaulofrontHenrique);
 - [Vitor Macedo Carvalho dos Santos](https://github.com/VitorMaced0);
+- [Guilherme Roberto da Silva](https://grsilva07.github.com/);
 
 ## Funcionalidades
 - Página inicial com destaque para livros selecionados
