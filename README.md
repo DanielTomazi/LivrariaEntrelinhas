@@ -6,6 +6,16 @@ Bem-vindo à **Livraria Entrelinhas** — um espaço online para amantes da leit
 A **Entrelinhas** é uma livraria virtual que oferece uma seleção cuidadosa de obras para todos os gostos e interesses.  
 O site foi desenvolvido para proporcionar uma experiência agradável, elegante e intuitiva, conectando leitores a histórias que inspiram e transformam.
 
+Desenvolvedores:
+- [Daniel Tomazi de Oliveira](https://github.com/DanielTomazi);
+
+Documentação:
+- [Cynthia Rodrigues Di Poli Ribamar](https://github.com/cynthiaribamar);
+- [Fernando Gonçalves Andrade Bilha](https//github.com/liinqy);
+- [Paulo Henrique Silva Guimarães](https://github.com/PaulofrontHenrique);
+- [Vitor Macedo Carvalho dos Santos](https://github.com/VitorMaced0);
+- [Guilherme Roberto da Silva](https://grsilva07.github.com/);
+
 ## Funcionalidades
 - Página inicial com destaque para livros selecionados
 - Catálogo organizado por categorias e gêneros
